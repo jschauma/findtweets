@@ -43,7 +43,7 @@ Can be specified multiple times.
 can be used to implement a simple re-tweeting bot by combining it with
 .Xr cron 8
 and
-.Xr tweet 1:
+.Xr tweet 1 Ns :
 .Bd -literal
 * * * * * findtweets -u user -t tag1 -t tag2 | sed -e 's/^/-r /' | \\
                 xargs tweet -u user
