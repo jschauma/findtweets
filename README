@@ -1,0 +1,11 @@
+Requirements:
+	- python (presumably > 2.5)
+	- py-simplejason (http://undefined.org/python/#simplejson)
+	- py-tweepy (http://code.google.com/p/tweepy/)
+
+Installation:
+	- install -c -m 755 src/findtweets.py /somewhere/in/your/path/findtweets
+	- install -c -m 444 doc/findtweets.1 /somewhere/in/your/manpath/man1/findtweets.1
+
+Questions/comments:
+	jschauma@netmeister.org

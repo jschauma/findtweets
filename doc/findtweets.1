@@ -1,0 +1,58 @@
+.\"	Copyright (c) 2008,2009,2010 Yahoo! Inc.
+.\"
+.Dd January 16, 2011
+.Dt FINDTWEETS 1
+.Os
+.Sh NAME
+.Nm findtweets
+.Nd find tweets for the given user and hashtags
+.Sh SYNOPSIS
+.Nm
+.Op Fl hv
+.Op Fl t Ar tag
+.Op Fl u Ar user
+.Sh DESCRIPTION
+.Nm
+is a very simple tool find tweet IDs mentioning a given user or the given
+hashtags.
+The output is the list of tweet IDs matching the tags or mentioning the
+user that are newer than the last message sent by this user.
+.Sh OPTIONS
+The following options are supported by
+.Nm :
+.Bl -tag -width u_user_
+.It Fl h
+Print a short usage statement and exit.
+Can be used multiple times.
+.It Fl t Ar tag
+Search for the given tag.
+Can be specified multiple times.
+Note that
+.Ar tag
+does not include the '#' character.
+.It Fl u Ar user
+Search for messages mentioning this user.
+.It Fl v
+Be verbose.
+Can be specified multiple times.
+.El
+.Sh EXIT STATUS
+.Ex -std
+.Sh EXAMPLES
+.Nm
+can be used to implement a simple re-tweeting bot by combining it with
+.Xr cron 8
+and
+.Xr tweet 1:
+.Bd -literal
+* * * * * findtweets -u user -t tag1 -t tag2 | sed -e 's/^/-r /' | \\
+                xargs tweet -u user
+.Ed
+.Sh HISTORY
+.Nm
+was originally written by
+.An Jan Schaumann
+.Aq jschauma@netmeister.org
+in February 2011.
+.Sh BUGS
+Please report bugs and feature requests to the author.
